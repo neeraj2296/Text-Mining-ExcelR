@@ -130,9 +130,9 @@ class(reviews)
 # Obtain Sentiment scores 
 s <- get_nrc_sentiment(reviews)
 head(s)
-reviews[1]
-# on tweet 4, you have 4 for anger, each one work for disgust, fear 
-# and sadness, 3 for trust , 4 words for negative and 2 positive.
+reviews[3]
+# on tweet 3, you have 1 for anger, each one work for anticipation, fear 
+# and sadness, 2 for surprise and trust , 1 word for negative and 4 positive.
 get_nrc_sentiment('Love')
 
 # Love has one Joy and one positive 
