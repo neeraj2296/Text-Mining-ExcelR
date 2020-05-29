@@ -1,3 +1,4 @@
+# Including the necassary libraries
 library(httpuv)
 library(rvest)
 library(base64enc)
@@ -18,7 +19,7 @@ library(dplyr)
 # devtools::install_github("lchiffon/wordcloud2")
 
 
-# IMDBReviews #############################
+# Loadin the IMDB Reviews of Jhon Wick 
 aurl <- "https://www.imdb.com/title/tt6146586/reviews?ref_=tt_ql_3"
 IMDB_reviews <- NULL
 for (i in 1:10){
