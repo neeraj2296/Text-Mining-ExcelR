@@ -1,3 +1,5 @@
+
+# Inclusing the necassary libraries
 #install.packages("ROAuth")
 library("twitteR")
 library("ROAuth")
@@ -12,6 +14,7 @@ library(scales)
 library(reshape2)
 library(dplyr)
 
+# Loading the data consisitng of Tweets of Facebook
 cred <- OAuthFactory$new(consumerKey='rLdMjSRcc74TMebjgEJM3DNEn', # Consumer Key (API Key)
                          consumerSecret='72rcW81rb6vOrFihArMzgwsCbPhIWJ74s8B676FI6L5a0h4Ldn', #Consumer Secret (API Secret)
                          requestURL='https://api.twitter.com/oauth/request_token',accessURL='https://api.twitter.com/oauth/access_token',                 authURL='https://api.twitter.com/oauth/authorize')
@@ -20,14 +23,12 @@ save(cred, file="twitter authentication.Rdata")
 load("twitter authentication.Rdata")
 
 #Access Token Secret
-
 setup_twitter_oauth("rLdMjSRcc74TMebjgEJM3DNEn", # Consumer Key (API Key)
                     "72rcW81rb6vOrFihArMzgwsCbPhIWJ74s8B676FI6L5a0h4Ldn", #Consumer Secret (API Secret)
                     "2572457845-GrCH29tg1yTTBWhNBJBsHW6oL2eJo0Fq139TBQy",  # Access Token
                     "yUlgdlFEV3CsnJctQcX940PTxbLa9dT2MR7Cm62kOpJqA")  #Access Token Secret
 
 #registerTwitterOAuth(cred)
-
 Tweets <- userTimeline('facebook', n = 1000,includeRts = T)
 TweetsDF <- twListToDF(Tweets)
 dim(TweetsDF)
